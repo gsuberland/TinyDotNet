@@ -14,7 +14,7 @@
     }
   },
   "libraries": {
-    "ruffle_1536/1.0.0": {
+    "tinydotnet_1536/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
