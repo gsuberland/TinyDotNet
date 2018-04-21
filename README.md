@@ -37,6 +37,12 @@ There are Import, Resource, Relocation, Debug, IAT, and .NET MetaData directorie
 
 By default there are three sections: .text, .rsrc, and .reloc for the metadata and code, resources, and relocation table respectively. We can completely delete the resource section as it only contains the manifest and version data, which isn't required. We can also delete the relocation section as it isn't needed once we get rid of the import table. Having only one section is critical because each additional section must, due to the alignment, add at least 512 bytes. By rebuilding the PE with 512-byte alignment, this cut down executable gets us to the 1,536 byte mark for a small Hello World.
 
+## Future Improvement
+
+- Rename the assembly from "tinype" to "t". Saves 5 bytes.
+- Can stuff main code into .ctor and run it directly from there. Means we get rid of the IL from .ctor, one method entry, and the method name. Saves 21 bytes.
+- `#GUID` table entry was "removed" by shifting it to the end of the stream table and decrementing the stream count, but the table entry is still there. Shifting things up saves about 16 bytes but so far I've not had much luck with getting this working. I think it messes up an offset somewhere, or maybe a length check, but I can't really tell where.
+
 ## Negative Results
 
 Here's where all my failed attempts go.
