@@ -1,5 +1,5 @@
 # TinyDotNet
-This project documents my research into creating tiny .NET executables. At the moment I can successfully make small programs (e.g. Hello World) in 1,536 bytes, and am experimenting with pushing this down to 1,024 bytes.
+This project documents my research into creating tiny .NET executables. At the moment I can successfully make small programs (e.g. Hello World) with a file size of 1,536 bytes (actually using 1104 bytes of this, with some slack in the PE headers too), and am experimenting with pushing this down to 1,024 bytes.
 
 ## Motivation and Goals
 
